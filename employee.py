@@ -24,7 +24,6 @@ def daily_emp_wage():
 
     print("welcome to Employee wage computation")
 
-
 FULL_TIME = 1
 WAGE_PER_HOUR = 20
 emp_type = (random.randint(0, 1))
