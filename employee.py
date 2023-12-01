@@ -25,24 +25,28 @@ def daily_emp_wage():
 
     print("welcome to Employee wage computation")
 
+    # FULL_TIME = 1
+    # PART_TIME = 2
+    WAGE_PER_HOUR = 20
+    NUM_OF_WORKING_DAYS = 20
+    total_emp_wage = 0
+    workings_hours = 0
+    for day in range(0, NUM_OF_WORKING_DAYS):
+        emp_type = (random.randint(0, 2))
+        match emp_type:
+            case 0:
+                print(" Employee is Absent.", day)
+                workings_hours = 0
+            case 1:
+                print(" Employee is working full time")
+                workings_hours = 8
+            case 2:
+                print(" Employee is working part time.")
+                workings_hours = 4
+        emp_wage = workings_hours * WAGE_PER_HOUR
+        total_emp_wage = total_emp_wage + emp_wage
+    print("Employee daily wage is : ", total_emp_wage)
 
-FULL_TIME = 1
-PART_TIME = 2
-WAGE_PER_HOUR = 20
-emp_type = (random.randint(0, 2))
-workings_hours = 0
-match emp_type:
-    case 1:
-        print(" Employee is working full time")
-        workings_hours = 8
-
-    case 2:
-        print(" Employee is working part time.")
-        workings_hours = 4
-    case 0:
-        print(" Employee is Absent.")
-emp_wage = workings_hours * WAGE_PER_HOUR
-print("Employee daily wage is : ", emp_wage)
 
 if __name__ == '__main__':
     daily_emp_wage()
